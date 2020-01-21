@@ -36,7 +36,7 @@ namespace Openhab.Proxy.Api.Configuration
 #if DEBUG
                     bearerValue = "4285833b-753e-4c29-a38b-a280da6250fa";
 #else
-                    RespondWithInvalidToken(context);
+                    Unauthorized(context);
                     return;
 #endif
                 }
