@@ -31,7 +31,7 @@ namespace Openhab.Proxy.Api.Controllers
         /// <remarks></remarks>
         /// <response code="202">Accepted</response>
         /// <response code="500">Internal server error</response>
-        [ProducesResponseType(typeof(HomeConfiguration), 200)]
+        [ProducesResponseType(typeof(Home), 200)]
         [ProducesResponseType(500)]
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -48,7 +48,7 @@ namespace Openhab.Proxy.Api.Controllers
             var devices = openhabItems.Where(i => ((dynamic)i.Metadata?["dialogflow"])?.config.zone != null
                                                   && ((dynamic)i.Metadata?["dialogflow"])?.config.zone != "Internal").ToList();
 
-            var configuration = new HomeConfiguration
+            var configuration = new Home
             {
                 Id = Group,
                 Uuid = Uuid,

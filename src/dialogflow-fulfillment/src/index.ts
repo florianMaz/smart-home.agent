@@ -2,8 +2,9 @@ import express from 'express';
 import * as bodyParser from 'body-parser';
 import { dialogflow, actionssdk, Image, Carousel, BasicCard, Button } from 'actions-on-google';
 import { OpenhabClient } from '../src/openhabClient'
-import { Device, ZoneElement } from './models/HomeConfiguration';
-import { Item } from './models/Item';
+import { Item } from './models/openhab/item.model';
+import { Device } from "./models/device.model";
+import { Room } from "./models/room.model";
 
 const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', '<key>');
 
@@ -15,7 +16,7 @@ server.use(bodyParser.json({ type: 'application/json' }));
 
 assistant.intent('demo.smarthome.device.state.check', async (conv, { room, deviceType, all }) => {
     let _device: Device;
-    let _room: ZoneElement;
+    let _room: Room;
     let _openhabItem: Item;
 
     // fetch configurations 
@@ -42,7 +43,7 @@ assistant.intent('demo.smarthome.device.command', async (conv, { room, deviceTyp
     console.log('value ', value);
 
     let _device: Device;
-    let _room: ZoneElement;
+    let _room: Room;
     let _openhabItem: Item;
 
     // fetch configurations 

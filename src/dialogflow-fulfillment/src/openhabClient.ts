@@ -1,10 +1,11 @@
 import { StringifyOptions, stringify } from 'query-string';
-import { Item } from './models/Item';
+import { Item } from './models/openhab/item.model';
 import { IRestResponse, RestClient } from 'typed-rest-client/RestClient';
 import { HttpClient } from 'typed-rest-client/HttpClient';
 import { IRequestOptions, IHttpClientResponse } from 'typed-rest-client/Interfaces';
-import { Command } from './models/Command';
-import { HomeConfiguration, Device, ZoneElement } from './models/HomeConfiguration';
+import { Device } from "./models/device.model";
+import { Room } from "./models/room.model";
+import { Home } from "./models/home.model";
 
 export class OpenhabClient {
     private apiBaseUrl: string;
@@ -29,9 +30,9 @@ export class OpenhabClient {
         this.httpClient = new HttpClient('ts', null, this.options)
     }
 
-    async getHomeConfiguration(): Promise<HomeConfiguration> {
+    async getHomeConfiguration(): Promise<Home> {
         let requestEndpoint = `/api/Configuration`;
-        let response: IRestResponse<HomeConfiguration> = await this.restClient.get<HomeConfiguration>(`${this.apiBaseUrl}${requestEndpoint}`);
+        let response: IRestResponse<Home> = await this.restClient.get<Home>(`${this.apiBaseUrl}${requestEndpoint}`);
         return response.result;
     }
 
@@ -41,9 +42,9 @@ export class OpenhabClient {
         return response.result;
     }
 
-    async getAllRooms(): Promise<ZoneElement[]> {
+    async getAllRooms(): Promise<Room[]> {
         let requestEndpoint = `/api/home/rooms`;
-        let response: IRestResponse<ZoneElement[]> = await this.restClient.get<ZoneElement[]>(`${this.apiBaseUrl}${requestEndpoint}`);
+        let response: IRestResponse<Room[]> = await this.restClient.get<Room[]>(`${this.apiBaseUrl}${requestEndpoint}`);
         return response.result;
     }
 

@@ -44,7 +44,7 @@ namespace Openhab.Proxy.Api.Configuration
                 if (!Guid.TryParse(bearerValue, out var token))
                 {
 
-                    RespondWithInvalidToken(context);
+                    Unauthorized(context);
                     return;
                 }
 
@@ -52,7 +52,7 @@ namespace Openhab.Proxy.Api.Configuration
                 var tokenIsValid = _tokenMap.ContainsKey(token);
                 if (!tokenIsValid)
                 {
-                    RespondWithInvalidToken(context);
+                    Unauthorized(context);
                     return;
                 }
 
@@ -62,9 +62,9 @@ namespace Openhab.Proxy.Api.Configuration
 
             }
 
-            private static void RespondWithInvalidToken(ActionExecutingContext actionContext)
+            private static void Unauthorized(ActionExecutingContext actionContext)
             {
-                actionContext.Result = new JsonResult("Invalid token")
+                actionContext.Result = new JsonResult(new { Error = "missing or invalid access token" })
                 {
                     StatusCode = (int?)HttpStatusCode.Forbidden
                 };
