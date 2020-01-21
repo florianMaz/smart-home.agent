@@ -5,8 +5,8 @@
 ### :construction: Introduction
 
 Le but de ce projet est de construire un agent avec dialogflow qui a le super pouvoir de contrôler votre maison
-:house_with_garden: ... intéliigente :wink: </br>
-Une maison virtuelle est mis en place pour chaque groupe via openhab, un framework open source de domotique (home automation). </br>
+:house_with_garden: ... intelligente :wink: </br>
+Une maison virtuelle est mise en place pour chaque groupe via openhab, un framework open source de domotique (home automation). </br>
 
 #### 1. :electric_plug: Openhab
 
@@ -23,9 +23,11 @@ Pour de brancher l'application sur l'instance openhab :black_circle: Settings </
 </p>
 
 #### 2. :large_orange_diamond: Openhab Proxy API
-Pour vous faciliter le développemnt, un proxy à été dévelopé afin de gérer une configuration (maison) par groupe et exposer un seul point d'accés pour tout le monde
+Pour vous faciliter le développemnt, un proxy à été dévelopé afin de gérer une configuration (maison) par groupe et exposer un seul point d'accés pour tout le monde </br>
+:point_right: [@ documentation](http://openhabproxyapi-dev-as.azurewebsites.net/index.html) </br>
+:point_right: [@ API base url](http://openhabproxyapi-dev-as.azurewebsites.net/api) </br>
 
-Le proxy vous permettera de :
+Le proxy vous permettra de :
 + Générer à la volet vos entité dialogflow
 + Récupérer la configuration de votre groupe (masion, zones, chambres, devices)
 + Récupérer ou mettre à jour l'état d'un device
