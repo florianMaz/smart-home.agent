@@ -24,8 +24,8 @@ Pour de brancher l'application sur l'instance openhab :black_circle: Settings </
 
 #### 2. :large_orange_diamond: Openhab Proxy API
 Pour vous faciliter le développemnt, un proxy à été dévelopé afin de gérer une configuration (maison) par groupe et exposer un seul point d'accés pour tout le monde </br>
-:point_right: [@ documentation](http://openhabproxyapi-dev-as.azurewebsites.net/index.html) </br>
-:point_right: [@ API base url](http://openhabproxyapi-dev-as.azurewebsites.net/api) </br>
+:point_right: [@ documentation](https://openhabproxyapi-dev-as.azurewebsites.net/index.html) </br>
+:point_right: [@ API base url](https://openhabproxyapi-dev-as.azurewebsites.net/api) </br>
 
 Le proxy vous permettra de :
 + Générer à la volet vos entité dialogflow
@@ -33,4 +33,19 @@ Le proxy vous permettra de :
 + Récupérer ou mettre à jour l'état d'un device
 + Un passe-plat (gateway) vers l'api ITEM de openhab (pour les plus fous :smiling_imp:)  
 
-[![import-agent](https://img.shields.io/static/v1?label=quickstart-agent&message=download&color=BLUE&style=for-the-badge&logo=google-assistant "download quickstart-agent")](https://github.com/badreddine-dlaila/smart-home.agent/raw/master/src/quickstart-agent.zip)
+
+
+#### 3. Setup :computer:
+
+1. Créer un agent dialogflow from scratch, (skip to next step si vous avez déjà créer votre agent)</br>
+
+   + Télécharger le quickstart-agent, celui-ci contient les entités de base + un intent de demo</br>
+   [![import-agent](https://img.shields.io/static/v1?label=quickstart-agent&message=download&color=BLUE&style=for-the-badge&logo=google-assistant "download quickstart-agent")](https://github.com/badreddine-dlaila/smart-home.agent/raw/master/src/quickstart-agent.zip)</br>
+   + Importer le zip dans l'agent
+     ![import-agent](/docs/import-agent.png)
+   + Récupérer la configuration des Entities via le proxy au format csv et les ajouter dans dialogflow 
+     ![generate-and-import-entity-demo](/docs/generate-and-import-entity-demo.gif)
+
+2. 
+
+
