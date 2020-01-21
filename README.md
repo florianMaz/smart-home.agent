@@ -40,12 +40,16 @@ Le proxy vous permettra de :
 1. Créer un agent dialogflow from scratch, (skip to next step si vous avez déjà créer votre agent)</br>
 
    + Télécharger le quickstart-agent, celui-ci contient les entités de base + un intent de demo</br>
-   [![import-agent](https://img.shields.io/static/v1?label=quickstart-agent&message=download&color=BLUE&style=for-the-badge&logo=google-assistant "download quickstart-agent")](https://github.com/badreddine-dlaila/smart-home.agent/raw/master/src/quickstart-agent.zip)</br>
+   [![import-agent](https://img.shields.io/static/v1?label=quickstart-agent&message=download&color=BLUE&style=for-the-badge&logo=google-assistant "download quickstart-agent")](https://github.com/badreddine-dlaila/smart-home.agent/raw/master/src/quickstart-agent.zip) </br></br>
    + Importer le zip dans l'agent
-     ![import-agent](/docs/import-agent.png)
+     ![import-agent](/docs/import-agent.png) </br></br>
    + Récupérer la configuration des Entities via le proxy au format csv et les ajouter dans dialogflow 
-     ![generate-and-import-entity-demo](/docs/generate-and-import-entity-demo.gif)
-
+     ![generate-and-import-entity-demo](/docs/generate-and-import-entity-demo.gif) </br></br>
+   + Créer les intents </br>
+    On peut par exemple imaginer deux intents différents:</br>
+     :point_right: récupérer l'état d'un device (ex: smarthome.device.state.check ) </br> 
+     :point_right: commander un device (ex: smarthome.device.command ) </br>
+     ![generate-and-import-entity-demo](/docs/generate-and-import-entity-demo.gif) </br></br>
 2. 
 
 
