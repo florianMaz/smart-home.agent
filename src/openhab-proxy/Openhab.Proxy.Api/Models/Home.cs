@@ -6,7 +6,7 @@ namespace Openhab.Proxy.Api.Models
     /// <summary>
     /// Home configuration including zones, rooms and devices
     /// </summary>
-    public class HomeConfiguration
+    public class Home
     {
         /// <summary>
         /// Home id in openhab
