@@ -49,6 +49,7 @@ Le proxy vous permettra de :
      :point_right: commander un device (ex: smarthome.device.command ) </br>
      :rocket: voici un exemple complet [smart-home-demo](https://github.com/badreddine-dlaila/smart-home.agent/blob/master/src/Smart-Home-Demo.zip) </br></br>
     ![create-entity-demo](/docs/create-entity-demo.gif) </br></br>
-    
+
+:triangular_flag_on_post: : Vous pouvez aussi importer le built-in agent smart-home et l'utiliser directement modulo quelques adaptations.   
 
 
