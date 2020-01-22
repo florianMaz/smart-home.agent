@@ -28,12 +28,10 @@ Pour vous faciliter le développemnt, un proxy à été dévelopé afin de gére
 :point_right: [@ API base url](https://openhabproxyapi-dev-as.azurewebsites.net/api) </br>
 
 Le proxy vous permettra de :
-+ Générer à la volet vos entité dialogflow
-+ Récupérer la configuration de votre groupe (masion, zones, chambres, devices)
++ Générer à la voleé vos entités dialogflow
++ Récupérer votre configuration (masion, zones, chambres, devices)
 + Récupérer ou mettre à jour l'état d'un device
 + Un passe-plat (gateway) vers l'api ITEM de openhab (pour les plus fous :smiling_imp:)  
-
-
 
 #### 3. Setup :computer:
 
@@ -50,7 +48,7 @@ Le proxy vous permettra de :
      :point_right: récupérer l'état d'un device (ex: smarthome.device.state.check ) </br> 
      :point_right: commander un device (ex: smarthome.device.command ) </br>
      :rocket: voici un exemple complet [smart-home-demo](https://github.com/badreddine-dlaila/smart-home.agent/blob/master/src/Smart-Home-Demo.zip) </br></br>
-     ![generate-and-import-entity-demo](/docs/generate-and-import-entity-demo.gif) </br></br>
+    ![create-entity-demo](/docs/create-entity-demo.gif) </br></br>
     
 
 
