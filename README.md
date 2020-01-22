@@ -49,7 +49,8 @@ Le proxy vous permettra de :
     On peut par exemple imaginer deux intents différents:</br>
      :point_right: récupérer l'état d'un device (ex: smarthome.device.state.check ) </br> 
      :point_right: commander un device (ex: smarthome.device.command ) </br>
+     :rocket: voici un exemple complet [smart-home-demo](https://github.com/badreddine-dlaila/smart-home.agent/blob/master/src/Smart-Home-Demo.zip) </br></br>
      ![generate-and-import-entity-demo](/docs/generate-and-import-entity-demo.gif) </br></br>
-2. 
+    
 
 
