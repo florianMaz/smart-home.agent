@@ -6,7 +6,7 @@ import { Item } from './models/openhab/item.model';
 import { Device } from "./models/device.model";
 import { Room } from "./models/room.model";
 
-const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', '<key>');
+const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', '4285833b-753e-4c29-a38b-a280da6250fa');
 
 const server = express();
 const assistant = dialogflow({ debug: false });
@@ -39,9 +39,6 @@ assistant.intent('demo.smarthome.device.state.check', async (conv, { room, devic
 });
 
 assistant.intent('demo.smarthome.device.command', async (conv, { room, deviceType, command, value }) => {
-    console.log('command ', command);
-    console.log('value ', value);
-
     let _device: Device;
     let _room: Room;
     let _openhabItem: Item;

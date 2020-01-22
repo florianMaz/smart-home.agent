@@ -43,6 +43,25 @@ namespace Openhab.Proxy.Api
                     Title = "Openhab Proxy API",
                     Version = "v1",
                 });
+#if DEBUG
+                options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme()
+                {
+                    Type = SecuritySchemeType.ApiKey,
+                    In = ParameterLocation.Header,
+                    Name = "api-key",
+                    Description = "api key",
+                });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "ApiKey" }
+                        },
+                        new string[] { }
+                    }
+                });
+#endif
                 options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                 {
                     Type = SecuritySchemeType.Http,
