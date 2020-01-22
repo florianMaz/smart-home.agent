@@ -6,7 +6,7 @@ import { Item } from './models/openhab/item.model';
 import { Device } from "./models/device.model";
 import { Room } from "./models/room.model";
 
-const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', '4285833b-753e-4c29-a38b-a280da6250fa');
+const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', '<acess-token>');
 
 const server = express();
 const assistant = dialogflow({ debug: false });
