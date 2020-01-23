@@ -14,7 +14,7 @@ Openhab expose les différents devices via une interface de contrôle web ou via
 [![openhab-iOS](https://img.shields.io/static/v1?label=OPENHAB&message=IOS&color=BLACK&style=for-the-badge&logo=apple "download openhab")](https://apps.apple.com/us/app/openhab/id492054521)
 [![openhab-android](https://img.shields.io/static/v1?label=OPENHAB&message=Android&color=GREEN&style=for-the-badge&logo=google-play "download openhab")](https://play.google.com/store/apps/details?id=org.openhab.habdroid) 
 [![openhab-web](https://img.shields.io/static/v1?label=OPENHAB&message=WEB&color=BLACK&style=for-the-badge&logo=google-chrome "download openhab")](http://62.35.68.9:8080/basicui/app?sitemap=demo)</br>
-Pour de brancher l'application sur l'instance openhab :black_circle: Settings </br>
+Pour brancher l'application sur l'instance openhab :black_circle: Settings </br>
 :arrow_right: Remote URL :point_right: <http://62.35.68.9:8080> </br>
 :arrow_right: Ignore SSL Certificates :point_right: :white_check_mark:
 
@@ -26,13 +26,13 @@ Pour de brancher l'application sur l'instance openhab :black_circle: Settings </
 
 [![run in-postman](https://img.shields.io/static/v1?label=POSTMAN&message=RUN&color=ORANGE&style=for-the-badge&logo=postman "run in postman")](https://app.getpostman.com/run-collection/cd15f5845da80fe68c36)
 
-Pour vous faciliter le développemnt, un proxy à été dévelopé afin de gérer une configuration (maison) par groupe et exposer un seul point d'accés pour tout le monde </br>
+Pour vous faciliter le développement, un proxy à été dévelopé afin de gérer une configuration (maison) par groupe et exposer un seul point d'accés pour tout le monde </br>
 :point_right: [@ documentation](https://openhabproxyapi-dev-as.azurewebsites.net/index.html) </br>
 :point_right: [@ API base url](https://openhabproxyapi-dev-as.azurewebsites.net/api) </br>
 
 Le proxy vous permettra de :
-+ Générer à la voleé vos entités dialogflow
-+ Récupérer votre configuration (masion, zones, chambres, devices)
++ Générer a été dévelopé la volée vos entités dialogflow
++ Récupérer votre configuration (maison, zones, chambres, devices)
 + Récupérer ou mettre à jour l'état d'un device
 + Un passe-plat (gateway) vers l'api ITEM de openhab (pour les plus fous :smiling_imp:)  
 
@@ -68,7 +68,7 @@ Le proxy vous permettra de :
   ```
 + créer un compte ngrok et récupérer le `Tunnel AuthToken`  [:point_right: depuis le dashboard ngrok](https://dashboard.ngrok.com/auth)</br></br>
    ![import-agent](/docs/ngrok-auth-token.png) </br></br>
-+ Replacer `<ngrok-auth-token>` dans `package.json` </br></br>
++ Remplacer `<ngrok-auth-token>` dans `package.json` </br></br>
   ```json
   "tunnel": "ngrok http -authtoken <ngrok-auth-token> -host-header=localhost 8080"
   ```
@@ -80,7 +80,7 @@ Le proxy vous permettra de :
   ~/dialogflow-project/src/dialogflow-fulfillment > npm run tunnel
   ``` 
   ![vscode-npm-scripts](/docs/vscode-run-scripts.gif) </br></br>
-+ Ajouter l'url généré par ngrok + /webhook dans la config fulfillment de l'agent sur dialogflow </br></br>
++ Ajouter l'url générée par ngrok + /webhook dans la config fulfillment de l'agent sur dialogflow </br></br>
   ![vscode-npm-scripts](/docs/debug-demo.gif) </br></br>
 
 :coffee: :beer: :grinning: :fire: :rocket: :airplane: :moon: :sunny: :stars: :star:
