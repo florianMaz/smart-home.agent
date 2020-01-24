@@ -148,7 +148,8 @@ namespace Openhab.Proxy.Api.Controllers
         {
             var openhabItems = await _itemsApi.GetItemsAsync(metadata: "dialogflow", tags: Token, recursive: true);
             var devices = openhabItems.Where(i => ((dynamic)i.Metadata?["dialogflow"])?.config.zone != null
-                                                  && ((dynamic)i.Metadata?["dialogflow"])?.config.zone != "Internal")
+                                                  && ((dynamic)i.Metadata?["dialogflow"])?.config.zone != "Internal"
+                                                  && i.Type != "Group")
                 .Select(d => new Device
                 {
                     Id = d.Name,

@@ -6,6 +6,7 @@ import { IRequestOptions, IHttpClientResponse } from 'typed-rest-client/Interfac
 import { Device } from "./models/device.model";
 import { Room } from "./models/room.model";
 import { Home } from "./models/home.model";
+import { Zone } from './models/zone.model';
 
 export class OpenhabClient {
     private apiBaseUrl: string;
@@ -36,15 +37,21 @@ export class OpenhabClient {
         return response.result;
     }
 
-    async getAllDevices(): Promise<Device[]> {
-        let requestEndpoint = `/api/home/devices`;
-        let response: IRestResponse<Device[]> = await this.restClient.get<Device[]>(`${this.apiBaseUrl}${requestEndpoint}`);
-        return response.result;
-    }
-
     async getAllRooms(): Promise<Room[]> {
         let requestEndpoint = `/api/home/rooms`;
         let response: IRestResponse<Room[]> = await this.restClient.get<Room[]>(`${this.apiBaseUrl}${requestEndpoint}`);
+        return response.result;
+    }
+
+    async getAllZones(): Promise<Zone[]> {
+        let requestEndpoint = `/api/home/zones`;
+        let response: IRestResponse<Zone[]> = await this.restClient.get<Zone[]>(`${this.apiBaseUrl}${requestEndpoint}`);
+        return response.result;
+    }
+
+    async getAllDevices(): Promise<Device[]> {
+        let requestEndpoint = `/api/home/devices`;
+        let response: IRestResponse<Device[]> = await this.restClient.get<Device[]>(`${this.apiBaseUrl}${requestEndpoint}`);
         return response.result;
     }
 
@@ -81,7 +88,6 @@ export class OpenhabClient {
     }
 
     async sendCommand(name: string, command: any): Promise<any> {
-        console.log('command in oh client', command);
         let requestEndpoint = `/api/items/${name}/state`;
         let response: IHttpClientResponse = await this.httpClient.post(`${this.apiBaseUrl}${requestEndpoint}`, command.toString());
         return response;
