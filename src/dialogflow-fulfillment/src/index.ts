@@ -6,8 +6,9 @@ import { Item } from './models/openhab/item.model';
 import { Device } from "./models/device.model";
 import { Room } from "./models/room.model";
 import { Zone } from './models/zone.model';
+import { LoginTicket } from 'google-auth-library/build/src/auth/loginticket';
 
-const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', '4285833b-753e-4c29-a38b-a280da6250fa');
+const openhabClient = new OpenhabClient('https://openhabproxyapi-dev-as.azurewebsites.net', 'd608bd60-66bd-4549-8db3-781cb678eb56');
 
 const server = express();
 const assistant = dialogflow({ debug: false });
@@ -15,18 +16,17 @@ const assistant = dialogflow({ debug: false });
 server.set('port', process.env.PORT || 8080);
 server.use(bodyParser.json({ type: 'application/json' }));
 
+
 assistant.intent('demo.smarthome.device.state', async (conv, { room, deviceType, all }) => {
     let _device: Device;
     let _room: Room;
     let _openhabItem: Item;
-
     // fetch configurations 
     await openhabClient.getAllDevices()
         .then(x => _device = x.find(d => d.room === room && d.type == deviceType));
     await openhabClient.getAllRooms()
         .then(x => _room = x.find(r => r.name === room));
 
-    console.log(_device);
     // respond with appropriate sentense if device is not found
     if (!_device) {
         conv.close(`Sorry mate, couldn't find any device of type ${deviceType} in ${_room.description}`);
@@ -42,7 +42,7 @@ assistant.intent('demo.smarthome.device.state', async (conv, { room, deviceType,
     conv.close(`${deviceType} is ${state} in ${_room.description}`);
 });
 
-assistant.intent('demo.smarthome.device.command', async (conv, { room, deviceType, command, value }) => {
+assistant.intent('demo.smarthome.device.command', async (conv, { room, deviceType, command, value, color }) => {
     let _device: Device;
     let _room: Room;
     let _openhabItem: Item;
@@ -81,10 +81,11 @@ assistant.intent('demo.smarthome.zone.command', async (conv, { zone, deviceType,
 
     // fetch configurations 
     if (!zone && all === 'true') {
+        
         await openhabClient.getAllDevices()
             .then(x => _devices = x.filter(d => d.type == deviceType));
         _zone = {
-            id: '//Todo',
+            id: 'ID DU FUTURE',
             description: 'Home',
             name: 'Home'
         };
